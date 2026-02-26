@@ -15,10 +15,11 @@
 
 <div class="card">
     <h1>Ashish Dahiya</h1>
-    <p>Frontend Developer | Building Clean Web Experiences</p>
+    <p>Frontend Developer | Quick Access</p>
 
     <div class="links">
 
+        <!-- SOCIAL -->
         <a href="https://github.com/Dashish0001" target="_blank">
             <i class="fa-brands fa-github"></i> GitHub
         </a>
@@ -35,6 +36,17 @@
             <i class="fa-brands fa-facebook"></i> Facebook
         </a>
 
+        <!-- WIFI -->
+        <button onclick="copyWifi()">
+            📶 Connect WiFi
+        </button>
+
+        <!-- UPI -->
+        <a href="upi://pay?pa=7772816615@kotak811&pn=Ashish%20Dahiya&cu=INR">
+            💰 Pay via UPI
+        </a>
+
+        <!-- CONTACT -->
         <a href="mailto:dahiyaashish0001@gmail.com">
             <i class="fa-solid fa-envelope"></i> Email
         </a>
@@ -45,6 +57,13 @@
 
     </div>
 </div>
+
+<script>
+function copyWifi() {
+    navigator.clipboard.writeText("Thanks@Ashish");
+    alert("WiFi Password Copied!");
+}
+</script>
 
 </body>
 </html>
