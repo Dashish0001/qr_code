@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+    color: white;
+
+    /* 🔥 GIF BACKGROUND */
+    background: url("background.gif") no-repeat center center;
+    background-size: cover;
+}
+
+/* 🔥 DARK OVERLAY */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 0;
+}
+
+/* 🔥 CARD */
+.card {
+    position: relative;
+    z-index: 2;
+
+    width: 320px;
+    padding: 30px;
+    border-radius: 20px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+/* TEXT */
+h1 {
+    margin-bottom: 8px;
+}
+
+p {
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* LINKS */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px;
+    border-radius: 12px;
+
+    background: rgba(0,0,0,0.6);
+
+    color: white;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px #2bdcff;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    background: #25D366;
+    color: black;
+    font-weight: bold;
+}
+
+/* 📱 MOBILE FIX */
+@media (max-width: 768px) {
+    body {
+        background-size: contain;   /* full GIF dikhe */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #0a0f2c;  /* side fill */
+    }
+
+    .card {
+        width: 90%;
+        padding: 25px;
+    }
+}
