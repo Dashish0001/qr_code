@@ -1,69 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ashish | QR</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ashish Dahiya</title>
 
-<link rel="stylesheet" href="style.css">
-
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
 
-<div class="card">
-    <h1>Ashish Dahiya</h1>
-    <p>Frontend Developer | Quick Access</p>
+  <!-- ── ANIMATED SVG BACKGROUND ── -->
+  <div class="bg-layer" aria-hidden="true">
+    <svg class="bg-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <!-- Aurora blobs -->
+        <radialGradient id="g1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#00ffe7" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#00ffe7" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="g2" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#7b5fff" stop-opacity="0.40"/>
+          <stop offset="100%" stop-color="#7b5fff" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="g3" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ff6fd8" stop-opacity="0.30"/>
+          <stop offset="100%" stop-color="#ff6fd8" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="blur-heavy">
+          <feGaussianBlur stdDeviation="60"/>
+        </filter>
+        <filter id="blur-mid">
+          <feGaussianBlur stdDeviation="30"/>
+        </filter>
+      </defs>
 
-    <div class="links">
+      <!-- Deep background -->
+      <rect width="1440" height="900" fill="#040813"/>
 
-        <!-- SOCIAL -->
-        <a href="https://github.com/Dashish0001" target="_blank">
-            <i class="fa-brands fa-github"></i> GitHub
-        </a>
+      <!-- Aurora blobs -->
+      <ellipse class="blob b1" cx="300"  cy="200" rx="420" ry="300" fill="url(#g2)" filter="url(#blur-heavy)"/>
+      <ellipse class="blob b2" cx="1100" cy="650" rx="380" ry="260" fill="url(#g1)" filter="url(#blur-heavy)"/>
+      <ellipse class="blob b3" cx="900"  cy="150" rx="300" ry="220" fill="url(#g3)" filter="url(#blur-heavy)"/>
+      <ellipse class="blob b4" cx="200"  cy="750" rx="260" ry="180" fill="url(#g1)" filter="url(#blur-heavy)"/>
 
-        <a href="https://www.linkedin.com/in/ashish-dahiya-57a590347" target="_blank">
-            <i class="fa-brands fa-linkedin"></i> LinkedIn
-        </a>
+      <!-- Grid lines -->
+      <g class="grid-lines" stroke="rgba(255,255,255,0.04)" stroke-width="1">
+        <line x1="0"    y1="150" x2="1440" y2="150"/>
+        <line x1="0"    y1="300" x2="1440" y2="300"/>
+        <line x1="0"    y1="450" x2="1440" y2="450"/>
+        <line x1="0"    y1="600" x2="1440" y2="600"/>
+        <line x1="0"    y1="750" x2="1440" y2="750"/>
+        <line x1="180"  y1="0"   x2="180"  y2="900"/>
+        <line x1="360"  y1="0"   x2="360"  y2="900"/>
+        <line x1="540"  y1="0"   x2="540"  y2="900"/>
+        <line x1="720"  y1="0"   x2="720"  y2="900"/>
+        <line x1="900"  y1="0"   x2="900"  y2="900"/>
+        <line x1="1080" y1="0"   x2="1080" y2="900"/>
+        <line x1="1260" y1="0"   x2="1260" y2="900"/>
+      </g>
 
-        <a href="https://www.instagram.com/dahiyaashish0001/" target="_blank">
-            <i class="fa-brands fa-instagram"></i> Instagram
-        </a>
+      <!-- Floating particles (dots) -->
+      <g class="particles">
+        <circle class="p" cx="120"  cy="80"  r="2" fill="#00ffe7" opacity="0.7"/>
+        <circle class="p" cx="400"  cy="320" r="1.5" fill="#fff"   opacity="0.5"/>
+        <circle class="p" cx="700"  cy="100" r="2.5" fill="#7b5fff" opacity="0.8"/>
+        <circle class="p" cx="950"  cy="420" r="1.5" fill="#00ffe7" opacity="0.6"/>
+        <circle class="p" cx="1200" cy="200" r="2"   fill="#ff6fd8" opacity="0.7"/>
+        <circle class="p" cx="250"  cy="550" r="1.5" fill="#fff"   opacity="0.4"/>
+        <circle class="p" cx="600"  cy="700" r="2"   fill="#7b5fff" opacity="0.6"/>
+        <circle class="p" cx="1350" cy="500" r="1.5" fill="#00ffe7" opacity="0.5"/>
+        <circle class="p" cx="80"   cy="400" r="2"   fill="#ff6fd8" opacity="0.6"/>
+        <circle class="p" cx="1100" cy="820" r="1.5" fill="#fff"   opacity="0.4"/>
+        <circle class="p" cx="850"  cy="600" r="2"   fill="#00ffe7" opacity="0.5"/>
+        <circle class="p" cx="450"  cy="800" r="1.5" fill="#7b5fff" opacity="0.6"/>
+        <circle class="p" cx="1300" cy="80"  r="2"   fill="#ff6fd8" opacity="0.5"/>
+        <circle class="p" cx="550"  cy="450" r="1"   fill="#fff"   opacity="0.35"/>
+        <circle class="p" cx="1050" cy="300" r="2"   fill="#00ffe7" opacity="0.55"/>
+      </g>
 
-        <a href="https://www.facebook.com/dahiyaashish0001/" target="_blank">
-            <i class="fa-brands fa-facebook"></i> Facebook
-        </a>
+      <!-- Diagonal accent lines -->
+      <line class="accent-line" x1="0" y1="900" x2="600" y2="0"   stroke="rgba(0,255,231,0.06)" stroke-width="1.5"/>
+      <line class="accent-line" x1="840" y1="900" x2="1440" y2="0" stroke="rgba(123,95,255,0.06)" stroke-width="1.5"/>
+    </svg>
+  </div>
 
-        <!-- WIFI -->
-        <button onclick="copyWifi()">
-            📶 Connect WiFi
-        </button>
+  <!-- ── CARD ── -->
+  <main class="card" role="main">
 
-        <!-- UPI -->
-        <a href="upi://pay?pa=7772816615@kotak811&pn=Ashish%20Dahiya&cu=INR">
-            💰 Pay via UPI
-        </a>
-
-        <!-- CONTACT -->
-        <a href="mailto:dahiyaashish0001@gmail.com">
-            <i class="fa-solid fa-envelope"></i> Email
-        </a>
-
-        <a href="https://wa.me/917772816615" target="_blank" class="whatsapp">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp
-        </a>
-
+    <!-- Avatar ring -->
+    <div class="avatar-wrap" aria-hidden="true">
+      <svg class="avatar-ring" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="56" fill="none" stroke="url(#ring-grad)" stroke-width="2" stroke-dasharray="8 4" class="ring-spin"/>
+        <defs>
+          <linearGradient id="ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00ffe7"/>
+            <stop offset="100%" stop-color="#7b5fff"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="avatar-icon">AD</div>
     </div>
-</div>
 
-<script>
-function copyWifi() {
-    navigator.clipboard.writeText("Thanks@Ashish");
-    alert("WiFi Password Copied!");
-}
-</script>
+    <h1 class="name">Ashish Dahiya</h1>
+    <p class="title-tag">Frontend Developer &nbsp;·&nbsp; Quick Access</p>
+
+    <!-- Divider -->
+    <div class="divider" aria-hidden="true"></div>
+
+    <!-- Links -->
+    <nav class="links" aria-label="Social and contact links">
+
+      <a href="https://github.com/Dashish0001" target="_blank" rel="noopener" class="link-btn github">
+        <i class="fa-brands fa-github"></i>
+        <span>GitHub</span>
+        <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/ashish-dahiya-57a590347" target="_blank" rel="noopener" class="link-btn linkedin">
+        <i class="fa-brands fa-linkedin"></i>
+        <span>LinkedIn</span>
+        <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+      </a>
+
+      <a href="https://www.instagram.com/dahiyaashish0001/" target="_blank" rel="noopener" class="link-btn instagram">
+        <i class="fa-brands fa-instagram"></i>
+        <span>Instagram</span>
+        <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+      </a>
+
+      <a href="https://www.facebook.com/dahiyaashish0001/" target="_blank" rel="noopener" class="link-btn facebook">
+        <i class="fa-brands fa-facebook"></i>
+        <span>Facebook</span>
+        <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+      </a>
+
+      <a href="upi://pay?pa=7772816615@kotak811&pn=Ashish%20Dahiya&cu=INR" class="link-btn upi">
+        <span class="upi-icon">₹ </span>
+        <span>Pay via UPI</span>
+        <i class="fa-solid fa-bolt arrow-icon"></i>
+      </a>
+
+      <a href="mailto:dahiyaashish0001@gmail.com" class="link-btn email">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Email Me</span>
+        <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+      </a>
+
+      <a href="https://wa.me/917772816615" target="_blank" rel="noopener" class="link-btn whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp</span>
+        <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+      </a>
+
+    </nav>
+
+    <!-- Footer -->
+    <p class="card-footer">Scan · Connect · Done ✦</p>
+  </main>
 
 </body>
 </html>

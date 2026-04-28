@@ -1,126 +1,315 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ═══════════════════════════════════════════════
+   ASHISH DAHIYA — QR CARD  |  style.css
+   Design: Dark Cyber-Luxe  |  Aurora + Glass
+═══════════════════════════════════════════════ */
+
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-family: Arial, sans-serif;
-    color: white;
-
-    background: url("background.gif") no-repeat center center;
-    background-size: cover;
+/* ── Tokens ── */
+:root {
+  --cyan:    #00ffe7;
+  --purple:  #7b5fff;
+  --pink:    #ff6fd8;
+  --bg:      #040813;
+  --glass:   rgba(255,255,255,0.055);
+  --border:  rgba(255,255,255,0.10);
+  --text:    #e8eaf6;
+  --muted:   rgba(255,255,255,0.42);
+  --font-h:  'Syne', sans-serif;
+  --font-b:  'DM Sans', sans-serif;
+  --radius:  22px;
+  --card-w:  340px;
 }
 
-/* DARK OVERLAY */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-    z-index: 0;
+/* ── Body ── */
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* CARD */
+/* ═══════════════════════════════════
+   BACKGROUND SVG LAYER
+═══════════════════════════════════ */
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bg-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Aurora blob animations */
+.blob {
+  transform-origin: center;
+  animation: floatBlob 12s ease-in-out infinite;
+}
+.b1 { animation-duration: 14s; animation-delay: 0s; }
+.b2 { animation-duration: 11s; animation-delay: -3s; }
+.b3 { animation-duration: 16s; animation-delay: -6s; }
+.b4 { animation-duration: 13s; animation-delay: -9s; }
+
+@keyframes floatBlob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(30px, -25px) scale(1.06); }
+  66%       { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+/* Particles */
+.p {
+  animation: twinkle 4s ease-in-out infinite;
+}
+.p:nth-child(odd)  { animation-duration: 3.5s; }
+.p:nth-child(3n)   { animation-duration: 5s; animation-delay: -1.2s; }
+.p:nth-child(5n)   { animation-duration: 6s; animation-delay: -2.5s; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 1; }
+}
+
+/* ═══════════════════════════════════
+   CARD
+═══════════════════════════════════ */
 .card {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 10;
+  width: var(--card-w);
+  padding: 36px 28px 28px;
+  border-radius: var(--radius);
+  text-align: center;
 
-    width: 320px;
-    padding: 30px;
-    border-radius: 20px;
+  background: var(--glass);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
 
-    text-align: center;
+  border: 1px solid var(--border);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.05) inset,
+    0 8px 60px rgba(0,0,0,0.55),
+    0 0 80px rgba(0,255,231,0.06);
 
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(12px);
-
-    border: 1px solid rgba(255,255,255,0.2);
-
-    box-shadow: 0 0 25px rgba(0,0,0,0.4);
-
-    animation: fadeIn 1s ease;
+  animation: cardIn 0.9s cubic-bezier(0.16,1,0.3,1) both;
 }
 
-/* ANIMATION */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
 }
 
-/* TEXT */
-h1 {
-    margin-bottom: 8px;
+/* ── Avatar ── */
+.avatar-wrap {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 18px;
 }
 
-p {
-    color: #ccc;
-    font-size: 14px;
-    margin-bottom: 20px;
+.avatar-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
-/* LINKS */
+.ring-spin {
+  animation: spin 12s linear infinite;
+  transform-origin: 60px 60px;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.avatar-icon {
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple), var(--cyan));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-h);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0,255,231,0.25);
+}
+
+/* ── Name & Title ── */
+.name {
+  font-family: var(--font-h);
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+  background: linear-gradient(100deg, #fff 30%, var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 6px;
+}
+
+.title-tag {
+  font-size: 12.5px;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+  margin-bottom: 0;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  margin: 20px 0;
+  background: linear-gradient(90deg, transparent, rgba(0,255,231,0.3), rgba(123,95,255,0.3), transparent);
+}
+
+/* ═══════════════════════════════════
+   LINK BUTTONS
+═══════════════════════════════════ */
 .links {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.links a,
-.links button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.link-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font-b);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.25s, box-shadow 0.25s, background 0.25s, border-color 0.25s;
+  position: relative;
+  overflow: hidden;
 
-    padding: 12px;
-    border-radius: 12px;
-
-    background: rgba(0,0,0,0.6);
-
-    color: white;
-    text-decoration: none;
-    border: none;
-
-    cursor: pointer;
-    transition: 0.3s;
+  animation: linkIn 0.6s cubic-bezier(0.16,1,0.3,1) both;
 }
 
-/* HOVER */
-.links a:hover,
-.links button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 15px #2bdcff;
+/* stagger */
+.link-btn:nth-child(1) { animation-delay: 0.15s; }
+.link-btn:nth-child(2) { animation-delay: 0.22s; }
+.link-btn:nth-child(3) { animation-delay: 0.29s; }
+.link-btn:nth-child(4) { animation-delay: 0.36s; }
+.link-btn:nth-child(5) { animation-delay: 0.43s; }
+.link-btn:nth-child(6) { animation-delay: 0.50s; }
+.link-btn:nth-child(7) { animation-delay: 0.57s; }
+
+@keyframes linkIn {
+  from { opacity: 0; transform: translateX(-16px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
-/* WHATSAPP */
+.link-btn i:first-child {
+  font-size: 17px;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.link-btn span {
+  flex: 1;
+  text-align: left;
+}
+
+.arrow-icon {
+  font-size: 11px !important;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+/* Shimmer on hover */
+.link-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.06) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+}
+
+.link-btn:hover::before { transform: translateX(100%); }
+
+.link-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.09);
+}
+
+.link-btn:hover .arrow-icon {
+  opacity: 0.7;
+  transform: translateX(0);
+}
+
+.link-btn:active { transform: scale(0.97); }
+
+/* UPI icon */
+.upi-icon {
+  width: 20px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ── Brand accent colors on hover ── */
+.github:hover    { border-color: rgba(255,255,255,0.25); box-shadow: 0 4px 24px rgba(255,255,255,0.08); }
+.linkedin:hover  { border-color: rgba(10,102,194,0.6);  box-shadow: 0 4px 24px rgba(10,102,194,0.20); }
+.instagram:hover { border-color: rgba(255,111,216,0.5); box-shadow: 0 4px 24px rgba(255,111,216,0.18); }
+.facebook:hover  { border-color: rgba(24,119,242,0.5);  box-shadow: 0 4px 24px rgba(24,119,242,0.20); }
+.upi:hover       { border-color: rgba(0,255,231,0.4);   box-shadow: 0 4px 24px rgba(0,255,231,0.18); }
+.email:hover     { border-color: rgba(123,95,255,0.5);  box-shadow: 0 4px 24px rgba(123,95,255,0.20); }
+
+/* ── WhatsApp ── */
 .whatsapp {
-    background: #25D366;
-    color: black;
-    font-weight: bold;
+  background: linear-gradient(135deg, #128C7E, #25D366);
+  border-color: transparent;
+  color: #fff;
+  font-weight: 600;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-    body {
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-color: #0a0f2c;
-    }
+.whatsapp:hover {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  border-color: rgba(37,211,102,0.5);
+  box-shadow: 0 4px 28px rgba(37,211,102,0.35);
+}
 
-    .card {
-        width: 90%;
-    }
+/* ── Footer ── */
+.card-footer {
+  margin-top: 22px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.22);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════
+   MOBILE
+═══════════════════════════════════ */
+@media (max-width: 420px) {
+  :root { --card-w: 92vw; }
+  .card { padding: 28px 20px 22px; }
+  .name { font-size: 22px; }
 }
